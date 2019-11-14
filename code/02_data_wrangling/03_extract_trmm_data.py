@@ -14,7 +14,7 @@
 #           proper geotransform and projection (WGS 84). The bounding box
 #           imported from the constants module has to coincide with the
 #           bounding box specified when submitting the PPS request. If no
-#           bounding box was specified, change the line 95 to:
+#           bounding box was specified, change the line 99 to:
 #           gt = (-180, 0.25, 0, 50, 0, -0.25)
 # =============================================================================
 import glob
@@ -29,6 +29,7 @@ import numpy as np
 import osr
 
 from code.functions import array_to_tif
+from code.variables import bbox
 
 
 def compute_accumulation(arr, date):
@@ -65,9 +66,6 @@ if __name__ == '__main__':
     gz_folder = 'hdf/TRMM/3B43/original'
     hdf_folder = 'hdf/TRMM/3B43/extracted'
     tif_folder = 'tif/TRMM/3B43/preprocessed'
-
-    # define bounding box for Colombia
-    bbox = (-78.9909352282, -4.29818694419, -66.8763258531, 12.4373031682)
 
     # create tif_folder and hdf_folder if they do not exist
     if not os.path.exists(tif_folder):
