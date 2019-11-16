@@ -10,6 +10,7 @@ import os
 
 import gdal
 import numpy as np
+import seaborn as sns
 import xarray as xr
 
 
@@ -45,7 +46,47 @@ def array_to_tif(arr, fn, sr, geotransform, gdtype, nd_val=None):
     del out_tif, band
 
 
-def create_data_array(folder, date_range):
+def beautify_ax(ax, edge_color, face_color):
+    """
+
+    :param ax:
+    :return:
+    """
+    # set ticks only on the left and the bottom
+    ax.yaxis.set_ticks_position('left')
+    ax.xaxis.set_ticks_position('bottom')
+
+    # change ticks length and width
+    ax.xaxis.set_tick_params(direction='in', length=3, width=0.5,)
+    ax.yaxis.set_tick_params(direction='in', length=3, width=0.5)
+
+    # change axis spines width and color
+    ax.spines['left'].set_linewidth(0.5)
+    ax.spines['bottom'].set_linewidth(0.5)
+    ax.spines['left'].set_color(edge_color)
+    ax.spines['bottom'].set_color(edge_color)
+
+    # set patch face color
+    ax.patch.set_facecolor(face_color)
+
+    # change ticks and labels color
+    ax.tick_params(axis='both', colors=edge_color, which='both')
+
+
+def beautify_box(ax, edge_color, face_color):
+    """
+    Beautifies boxplot boxes by changing their edge and face colors.
+    :param ax:  matplotlib.axes._subplots.AxesSubplot object
+    :return:    None
+    """
+    for j, box in enumerate(ax.artists):
+        box.set_edgecolor(edge_color)
+        box.set_facecolor(face_color)
+        for n in range(6 * j, 6 * (j + 1)):
+            ax.lines[n].set_color(edge_color)
+
+
+def create_data_array(folder, date_range, offset=None):
     """
     Creates a xarray DataArray from all the GeoTIFF files found in the folder
     parameter. The result DataArray has three dimensions:
@@ -56,11 +97,12 @@ def create_data_array(folder, date_range):
     :param folder:      path to the folder with the GeoTIFF files
     :param date_range:  pandas.core.indexes.datetimes.DatetimeIndex object,
                         which can be created using the pd.date_range function
+    :param offset:      number of files to skip at the beginning
     :return:            xarray.core.dataarray.DataArray object
     """
     # read each individual array, store them and stack them
     data = []
-    for fn in glob.glob(os.path.join(folder, '*.tif')):
+    for fn in glob.glob(os.path.join(folder, '*.tif'))[offset:]:
         ds = gdal.Open(fn, 0)
         arr = ds.ReadAsArray()
         data.append(arr)
@@ -95,3 +137,12 @@ def get_nodata_value(folder):
     del ds
 
     return nd
+
+
+def init_sns():
+    """
+
+    :return:
+    """
+    sns.set_context('paper')
+    sns.set_style('white')
