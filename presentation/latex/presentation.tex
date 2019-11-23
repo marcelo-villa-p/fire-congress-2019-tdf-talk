@@ -1,0 +1,311 @@
+% \PassOptionsToPackage{draft}{graphicx}
+\documentclass[10pt]{beamer}
+
+\usetheme[]{metropolis}
+
+\usepackage{inputenc}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{gensymb}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fontawesome}
+\usepackage{threeparttable}
+\usepackage[font=tiny,labelfont=bf]{caption}
+\usepackage[style=authoryear, sorting=nyt, natbib, isbn=false,url=false, doi=false]{biblatex}
+\addbibresource{references.bib}
+
+% define tikz environment properties
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usetikzlibrary[external]
+\tikzexternaldisable
+\usepackage{pgfplots}
+\usetikzlibrary{backgrounds,calc,patterns,positioning,shapes,decorations.pathreplacing,decorations.pathmorphing,shapes.geometric}
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
+\definecolor{bg-white}{HTML}{FAFAFA}
+\definecolor{cgreen}{HTML}{a5d6a7}
+\definecolor{corange}{HTML}{ffcc80}
+\definecolor{cgreend}{HTML}{4caf50}
+\definecolor{coranged}{HTML}{ff9800}
+\definecolor{tdf-green}{HTML}{267300}
+\definecolor{tdf-orange}{HTML}{FFAA00}
+
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\title{Fire activity on the Colombian Tropical Dry Forest}
+\institute{Faculty of Environmental and Rural Studies \\ Pontificia Universidad Javeriana \\ Bogotá, Colombia}
+\subtitle{An environmental and social perspective}
+\date{November 21, 2019}
+\author{Marcelo Villa-Piñeros}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+\begin{document}
+
+\maketitle
+
+\section{Why the Tropical Dry Forest?}
+
+\begin{frame}{}
+    \centering
+    Highly \alert{threatened} and \alert{understudied} biome
+\end{frame}
+
+\section{What is the Tropical Dry Forest?}
+{%
+\setbeamertemplate{frame footer}{\tiny{\citet{Mooney1995,Sanchez-Azofeifa2005,Dirzo2011,Pizano2014b,Dexter2018}}}
+\begin{frame}{}
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+                \item Deciduous vegetation
+                \item Relatively high fertility
+                \item Limited to lowlands (1000 m.s.n.m.)
+                \item Annual temperature: > 25\degree C
+                \item Annual precipitation: between 250 and 2500 mm
+                \item \alert{Strong seasonality}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=\textwidth]{figures/misc/tuparro-bosques-secos}
+                \caption{Tropical Dry Forest in the El Tuparro natural national park, Colombia. Credits: Instituto Alexander von Humboldt.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+}
+
+\section{Where is the Tropical Dry Forest?}
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/map/tdf_world}
+        \caption{\textcolor{tdf-green}{\textbf{Tropical and Subtropical Dry Broadleaf Forests}} ecoregion. Data sources: \citet{Olson2002} and Natural Earth.}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/map/tdf_col}
+        \caption{Tropical Dry Forest \textcolor{tdf-orange}{\textbf{biome}} and \textcolor{tdf-green}{\textbf{2014 distribution}} in Colombia. Data sources: \citet{Ariza2014,Etter2015}, CGIAR/SRTM, Natural Earth.}
+    \end{figure}
+\end{frame}
+
+\section{What is the situation of the Tropical Dry Forest?}
+
+\begin{frame}{}
+    \vspace*{8mm}
+
+    \onslide<1->{
+        \begin{quote}
+            ``The rain forest is not the most threatened of the major tropical forest types. The \alert{tropical dry forests} hold this honor.''
+        \end{quote} 
+        \rightline{\footnotesize{--- \citet{Janzen1988}}}
+    }
+    
+    \vspace{5mm}
+
+    \onslide<2->{
+        \begin{quote}
+            ``Virtually all of the \alert{tropical dry forests} that remain are currently exposed to a variety of different threats.''
+        \end{quote}
+        \rightline{\footnotesize{--- \citet{Miles2006}}}
+    }
+    \vspace{5mm}
+    
+    \onslide<3>{
+        \begin{quote}
+            ``There is a general perception that the most urgent conservation issues in the tropics concern rain forests but their disproportionate scientific, policy and public profiles have distracted attention from the vulnerability of \alert{tropical dry forests}.''
+        \end{quote}
+        \rightline{\footnotesize{--- \citet{Pennington2018}}}
+    }
+\end{frame}
+
+{%
+\setbeamertemplate{frame footer}{\tiny{\citet{Janzen1988,Miles2006,Garcia2014,Etter2015,Dexter2018,Pennington2018}}}
+\begin{frame}{}
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.45\textwidth}
+            \textbf{Threats}
+            \begin{itemize}
+                \item Climate change
+                \item Forest fragmentation
+                \item Conversion to agriculture
+                \item Human population
+                \item \alert{Fire}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \textbf{Status}
+            \begin{itemize}
+                \item 3\% unexposed to threats globally
+                \item 10\% remains intact in Latin America
+                \item \alert{3\% remaining in Colombia (critically endangered)}
+            \end{itemize}
+        \end{column}
+    \end{columns}
+\end{frame}
+}
+
+\section{Fire activity relationships in Tropical Forests}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{figures/tikz/controls_and_pressures.tikz}
+        \caption{Theoretical model of environmental controls and human pressures regulating fire activity in tropical forests. Based on \citet{Cochrane2003,Shlisky2009,Bowman2011}}
+    \end{figure}
+\end{frame}
+
+\section{Data}
+
+\begin{frame}{}
+    \begin{table}
+    \scriptsize
+    \caption{Retrieved datasets and their properties}
+    \centering
+    \begin{tabular}{lllll}
+        \toprule
+        Dataset & Source & Product & Temporal res.  & Spatial res.  \\
+        \midrule            
+        Thermal Anomalies & MODIS & MOD14A2 & Weekly & 1 km \\
+        Precipitation & TRMM & 3B43 & Monthly & 0.25\degree \\
+        Enhanced Vegetation Index  & MODIS & MOD14A3 & Monthly & 1 km \\
+        Land cover & MODIS & MCD12Q1 & Yearly  & 500 m \\
+        \bottomrule
+    \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics{figures/tikz/data_model.tikz}
+        \caption{Data model representation}
+    \end{figure}
+\end{frame}
+
+\section{Environmental controls overview}
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/graph/fire_ppt_evi_time_series}
+        \caption{Fire pixels, Precipitation and Enhanced Vegetation Index time series (left side) and month aggregation (right side). Red line represents the dry month precipitation threshold \citep{VanDerWerf2008}.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/graph/ppt_evi_kde}
+        \caption{Precipitation and Enhanced Vegetation Index \textbf{all-pixel values distribution} and \alert{\textbf{fire-pixel-only values distribution}}.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/graph/ppt_evi_correlation.eps}
+        \caption{Correlation between fire pixels and both Precipitation and Enhanced Vegetation Index (including previous 3 month period average). A lowess model is fitted and the Pearson correlation coefficient is displayed for each variable.}
+    \end{figure}
+\end{frame}
+
+\section{Human pressures overview}
+
+\begin{frame}{}
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                 \includegraphics[width=0.95\textwidth]{figures/graph/landcover_treemap}
+                \caption{Proportion of land cover type.}
+            \end{figure}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                 \includegraphics[width=0.95\textwidth]{figures/graph/fire_per_landcover_boxplot}
+                \caption{Fire pixel proportion per land cover type.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/graph/distance_to_nearest_forest_hist}
+        \caption{Distance to the nearest forest pixel values distribution. Each bar corresponds to distance of one pixel. Red bar represents pixels with zero distance (\emph{i.e.} forest pixels).}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{figures/graph/distance_by_landcover_reg}
+        \caption{Fire pixel probability as a function of distance to the nearest forest pixel and land cover type.}
+    \end{figure}
+\end{frame}
+
+\section{Further thoughts}
+
+\section{The \emph{Cerro Los Cristales} Fire}
+
+\begin{frame}{}
+    \begin{columns}[onlytextwidth]
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.95\textwidth]{figures/misc/cerro-los-cirstales-fire-map}
+                \caption{Burned area vs. restoration project area. Source: Grupo Conservación de Ecosistemas.}
+            \end{figure}
+        \end{column}
+         \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                 \includegraphics[width=0.95\textwidth]{figures/misc/cerro-los-cristales-fire}
+                \caption{Fire on the \emph{Cerro Los Cristales}, 31 August 2018. Credits: Grupo Conservación de Ecosistemas.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Conclusions}
+
+\begin{frame}{}
+    \begin{itemize}[<+->]
+        \item \alert{Climate} as a dominant control
+        \item \alert{Human shaped} burning patterns
+        \item Important underlying \alert{social} and \alert{economic} factors
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    \centering
+    \faGithub~~github.com/\alert{marcelo-villa-p}/fire-congress-2019-tdf-talk
+\end{frame}
+
+
+\appendix
+
+\begin{frame}[allowframebreaks]{}
+    \renewcommand*{\bibfont}{\tiny}
+    \printbibliography[heading=none]
+%   \bibliographystyle{abbrv}
+
+\end{frame}
+
+
+\end{document}
