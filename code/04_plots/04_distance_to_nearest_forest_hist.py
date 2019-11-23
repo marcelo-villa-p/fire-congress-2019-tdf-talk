@@ -2,7 +2,8 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Plots the distribution of fire pixels as a function of the distance
+#           to the nearest forest pixel.
 # =============================================================================
 import os
 

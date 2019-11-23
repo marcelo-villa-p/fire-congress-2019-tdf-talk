@@ -2,7 +2,9 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Creates a grid with time series and monthly grouped boxplots for
+#           fire pixels, precipitation and Enhanced Vegetation Index (EVI)
+#           information.
 # =============================================================================
 from calendar import month_abbr
 import os

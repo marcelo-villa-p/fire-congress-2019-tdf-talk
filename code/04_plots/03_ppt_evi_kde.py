@@ -2,7 +2,9 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Creates Kernel Density Estimate (KDE) plots for both precipitation
+#           and Enhanced Vegetation Index (EVI) pixel values. KDEs are
+#           separately plotted for all pixel values and just fire-pixel values.
 # =============================================================================
 import os
 
@@ -54,13 +56,17 @@ if __name__ == '__main__':
         # set x label and beautify ax
         axs[i].set_xlabel(labels[i], labelpad=10, color=edge_color)
         beautify_ax(axs[i], edge_color, face_color)
+        axs[i].tick_params(labelleft=False)
 
     # adjust y axis limits on the second column
     axs[1].set_ylim([0, 5])
 
     # adjust plot layout and save figure
     sns.despine(offset={'left': 5, 'bottom': 10}, trim=True)
-    plt.subplots_adjust(wspace=0.4, hspace=1)
+    plt.subplots_adjust(wspace=0.4)
+    dim = fig.get_size_inches()
+    dim[1] /= 1.75
+    fig.set_size_inches(dim)
     plt.tight_layout()
     fn = '../../figures/graph/ppt_evi_kde.pdf'
     plt.savefig(fn, format='pdf', dpi=1200, facecolor=face_color)
