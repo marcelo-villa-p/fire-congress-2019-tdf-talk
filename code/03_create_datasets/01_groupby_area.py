@@ -2,7 +2,9 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Groups fire pixels, precipitation and Enhanced Vegetation Index
+#           (EVI) data for each month. Previous 3 months average values for
+#           precipitation and EVI are also calculated.
 # =============================================================================
 import os
 

@@ -45,9 +45,9 @@ def reclass(arr):
 
     0   Non-flammable
     1   Forest
-    2   Savannas
-    3   Grasslands
-    4   Croplands
+    2   Savanna
+    3   Grassland
+    4   Cropland
     255 Unclassified
 
     Here is the mapping of the original values to the new values:

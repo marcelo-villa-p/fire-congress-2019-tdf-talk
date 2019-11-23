@@ -2,8 +2,8 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:  Creates a csv file with yearly landcover information for every fire
-#           pixel identified during each year.
+# Purpose:  Creates a csv file with yearly land cover information for every
+#           fire pixel identified during each year.
 # =============================================================================
 import os
 

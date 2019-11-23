@@ -22,7 +22,7 @@ if __name__ == '__main__':
     # define mask (shapefile)
     mask = '../shp/aoi/TDF_biome_COL_4326.shp'
 
-    # define products to be cropped and resampled
+    # define products to be masked
     products = [
         {'parent': 'MODIS', 'prod': 'MCD12Q1', 'dir': 'resampled',
          'algo': 'mode'},

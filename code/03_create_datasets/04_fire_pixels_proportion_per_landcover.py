@@ -2,7 +2,8 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Creates a csv with monthly fire pixel proportions for each land
+#           cover type.
 # =============================================================================
 import os
 

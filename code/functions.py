@@ -17,7 +17,6 @@ import xarray as xr
 def array_to_tif(arr, fn, sr, geotransform, gdtype, nd_val=None):
     """
     Writes a 2D NumPy array to a GeoTIFF file in disk.
-
     :param arr:             2D NumPy array
     :param fn:              output GeoTIFF's file name
     :param sr:              output GeoTIFF's spatial reference
@@ -48,7 +47,7 @@ def array_to_tif(arr, fn, sr, geotransform, gdtype, nd_val=None):
 
 def beautify_ax(ax, edge_color, face_color):
     """
-
+    Beautifies an ax object by adjusting axis and ticks and changing colors.
     :param ax:
     :return:
     """
@@ -141,7 +140,7 @@ def get_nodata_value(folder):
 
 def init_sns():
     """
-
+    Initializes seaborn environment by setting the plots' context and style.
     :return:
     """
     sns.set_context('paper')
