@@ -2,7 +2,7 @@
 # =============================================================================
 # Date:     November, 2019
 # Author:   Marcelo Villa P.
-# Purpose:
+# Purpose:  Creates yearly forest proximity rasters.
 # =============================================================================
 import glob
 import os
